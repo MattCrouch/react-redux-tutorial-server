@@ -92,16 +92,15 @@ const users = [
 ];
 
 function getComments(ids) {
-  return ids.map(id => comments.find(comment => comment.id === id));
+  return ids.map(id => getComment(id));
+}
+
+function getComment(id) {
+  return comments.find(comment => comment.id === id);
 }
 
 function getPhotos() {
-  // Deep clone photos object
-  const results = JSON.parse(JSON.stringify(photos));
-
-  const populated = results.map(result => getPhotoData(result));
-
-  return populated;
+  return photos.map(result => getPhotoData(result));
 }
 
 function getPhotoData(photo) {
@@ -134,8 +133,24 @@ function getUser(id) {
   return users.find(user => user.id === id);
 }
 
+function addComment(photo_id, user_id, comment) {
+  const id = uuid();
+
+  comments.push({
+    id,
+    user_id,
+    comment
+  });
+
+  const photo = photos.find(photo => photo.id === photo_id);
+
+  photo.comments.push(id);
+
+  return getComment(id);
+}
+
 module.exports = {
   getPhotos,
-  getPhoto
-  // addComment
+  getPhoto,
+  addComment
 };

@@ -4,42 +4,58 @@ const comments = [
   {
     id: "1",
     user_id: "1",
-    comment: "This is great"
+    comment: "This is great",
+    top: 12,
+    left: 34
   },
   {
     id: "2",
     user_id: "3",
-    comment: "This is great"
+    comment: "This is great",
+    top: 42,
+    left: 29
   },
   {
     id: "3",
     user_id: "2",
-    comment: "This is great"
+    comment: "This is great",
+    top: 82,
+    left: 11
   },
   {
     id: "4",
     user_id: "1",
-    comment: "This is great"
+    comment: "This is great",
+    top: 66,
+    left: 49
   },
   {
     id: "5",
     user_id: "3",
-    comment: "This is great"
+    comment: "This is great",
+    top: 9,
+    left: 45
   },
   {
     id: "6",
     user_id: "1",
-    comment: "This is great"
+    comment: "This is great",
+    top: 23,
+    left: 34
   },
   {
     id: "7",
     user_id: "2",
-    comment: "This is great"
+    comment: "This is great",
+    top: 89,
+    left: 52
   },
   {
     id: "8",
     user_id: "1",
-    comment: "This is great"
+    comment: "This is great",
+    top: 13,
+    left: 94
   }
 ];
 

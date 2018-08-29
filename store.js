@@ -62,31 +62,31 @@ const comments = [
 const photos = [
   {
     id: "1",
-    src: "/",
+    src: "/gallery-photos/eiffel-tower.jpg",
     user_id: "1",
     comments: ["1", "2", "4"]
   },
   {
     id: "2",
-    src: "/",
+    src: "/gallery-photos/eiffel-tower.jpg",
     user_id: "2",
     comments: ["8"]
   },
   {
     id: "3",
-    src: "/",
+    src: "/gallery-photos/eiffel-tower.jpg",
     user_id: "1",
     comments: ["3", "5"]
   },
   {
     id: "4",
-    src: "/",
+    src: "/gallery-photos/eiffel-tower.jpg",
     user_id: "3",
     comments: ["6", "7"]
   },
   {
     id: "5",
-    src: "/",
+    src: "/gallery-photos/eiffel-tower.jpg",
     user_id: "2",
     comments: []
   }

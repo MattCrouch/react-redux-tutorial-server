@@ -193,7 +193,8 @@ function addComment(photo_id, user_id, comment) {
 }
 
 module.exports = {
+  addComment,
   getPhotos,
   getPhoto,
-  addComment
+  getUser
 };

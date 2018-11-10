@@ -35,4 +35,14 @@ app.post("/comments", (req, res) => {
   return res.json(comment);
 });
 
+app.get("/users/:id", (req, res) => {
+  const user = store.getUser(req.params.id);
+
+  if (user) {
+    return res.json(user);
+  }
+
+  return res.status(404).json({});
+});
+
 app.listen(3001, () => console.log("Example app listening on port 3001!"));

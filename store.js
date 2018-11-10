@@ -151,13 +151,16 @@ function getPhotoData(photo) {
   delete result.user_id;
 
   result.comments = getComments(result.comments).map(comment => {
-    delete comment.photo_id;
+    // Deep clone comment object
+    const clone = JSON.parse(JSON.stringify(comment));
 
-    comment.user = getUser(comment.user_id);
+    delete clone.photo_id;
 
-    delete comment.user_id;
+    clone.user = getUser(clone.user_id);
 
-    return comment;
+    delete clone.user_id;
+
+    return clone;
   });
 
   return result;

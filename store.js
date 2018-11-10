@@ -64,7 +64,7 @@ const photos = [
     id: "1",
     src: "/gallery-photos/dog-sun.jpg",
     user_id: "1",
-    comments: ["1", "2", "4"]
+    comments: ["1", "2", "3"]
   },
   {
     id: "2",

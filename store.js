@@ -4,23 +4,23 @@ const comments = [
   {
     id: "1",
     user_id: "1",
-    comment: "This is great",
-    top: 12,
-    left: 34
+    comment: "The shadow is my favourite bit",
+    top: 37,
+    left: 54
   },
   {
     id: "2",
     user_id: "3",
-    comment: "This is great",
-    top: 42,
-    left: 29
+    comment: "She is so cute!",
+    top: 70,
+    left: 68
   },
   {
     id: "3",
     user_id: "2",
-    comment: "This is great",
-    top: 82,
-    left: 11
+    comment: "Try and get more of the sky in next time",
+    top: 9,
+    left: 92
   },
   {
     id: "4",
@@ -62,7 +62,7 @@ const comments = [
 const photos = [
   {
     id: "1",
-    src: "/gallery-photos/eiffel-tower.jpg",
+    src: "/gallery-photos/dog-sun.jpg",
     user_id: "1",
     comments: ["1", "2", "4"]
   },
@@ -70,23 +70,47 @@ const photos = [
     id: "2",
     src: "/gallery-photos/eiffel-tower.jpg",
     user_id: "2",
-    comments: ["8"]
+    comments: []
   },
   {
     id: "3",
-    src: "/gallery-photos/eiffel-tower.jpg",
+    src: "/gallery-photos/laser-wave.jpg",
     user_id: "1",
-    comments: ["3", "5"]
+    comments: []
   },
   {
     id: "4",
-    src: "/gallery-photos/eiffel-tower.jpg",
+    src: "/gallery-photos/qe-bridge.jpg",
     user_id: "3",
-    comments: ["6", "7"]
+    comments: []
   },
   {
     id: "5",
-    src: "/gallery-photos/eiffel-tower.jpg",
+    src: "/gallery-photos/queens-house.jpg",
+    user_id: "2",
+    comments: []
+  },
+  {
+    id: "6",
+    src: "/gallery-photos/rhodes-coastline.jpg",
+    user_id: "2",
+    comments: []
+  },
+  {
+    id: "7",
+    src: "/gallery-photos/southbank-theatre.jpg",
+    user_id: "2",
+    comments: []
+  },
+  {
+    id: "8",
+    src: "/gallery-photos/tree-lights.jpg",
+    user_id: "2",
+    comments: []
+  },
+  {
+    id: "9",
+    src: "/gallery-photos/woolwich-tunnel.jpg",
     user_id: "2",
     comments: []
   }
@@ -95,7 +119,7 @@ const photos = [
 const users = [
   {
     id: "1",
-    name: "Barry"
+    name: "Matt"
   },
   {
     id: "2",
@@ -103,7 +127,7 @@ const users = [
   },
   {
     id: "3",
-    name: "Larry"
+    name: "Lauren"
   }
 ];
 

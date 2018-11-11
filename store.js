@@ -176,18 +176,22 @@ function getUser(id) {
   return users.find(user => user.id === id);
 }
 
-function addComment(photo_id, user_id, comment) {
+function addComment(photo_id, user_id, comment, left, top) {
   const id = uuid();
 
   comments.push({
     id,
     user_id,
-    comment
+    comment,
+    left,
+    top
   });
 
   const photo = photos.find(photo => photo.id === photo_id);
 
-  photo.comments.push(id);
+  if (photo) {
+    photo.comments.push(id);
+  }
 
   return getComment(id);
 }

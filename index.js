@@ -6,6 +6,11 @@ const express = require("express");
 const app = express();
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+  );
   next();
 });
 app.use(express.json());
@@ -26,13 +31,19 @@ app.get("/photos/:photo_id", (req, res) => {
 });
 
 app.post("/comments", (req, res) => {
-  const comment = store.addComment(
-    req.body.photo_id,
-    req.body.user_id,
-    req.body.comment
-  );
+  const { photo_id, user_id, comment, left, top } = req.body;
 
-  return res.json(comment);
+  if (!store.getPhoto(photo_id)) {
+    return res.status(400).json({ message: "Photo not found" });
+  }
+
+  if (!store.getUser(user_id)) {
+    return res.status(400).json({ message: "User not found" });
+  }
+
+  const savedComment = store.addComment(photo_id, user_id, comment, left, top);
+
+  return res.json(savedComment);
 });
 
 app.get("/users/:id", (req, res) => {

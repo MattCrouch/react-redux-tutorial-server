@@ -193,7 +193,11 @@ function addComment(photo_id, user_id, comment, left, top) {
     photo.comments.push(id);
   }
 
-  return getComment(id);
+  const newComment = getComment(id);
+
+  newComment.photo_id = photo_id;
+
+  return newComment;
 }
 
 module.exports = {

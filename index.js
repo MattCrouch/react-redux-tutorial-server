@@ -6,7 +6,7 @@ const express = require("express");
 const app = express();
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,PATCH,POST,PUT");
   res.header(
     "Access-Control-Allow-Headers",
     "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
@@ -50,6 +50,20 @@ app.get("/users/:id", (req, res) => {
   const user = store.getUser(req.params.id);
 
   if (user) {
+    return res.json(user);
+  }
+
+  return res.status(404).json({});
+});
+
+app.patch("/users/:id", (req, res) => {
+  const user = store.getUser(req.params.id);
+
+  const { name } = req.body;
+
+  if (user) {
+    user.name = name;
+
     return res.json(user);
   }
 

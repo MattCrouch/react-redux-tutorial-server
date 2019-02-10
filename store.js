@@ -176,6 +176,10 @@ function getUser(id) {
   return users.find(user => user.id === id);
 }
 
+function isUsernameTaken(name, currentId) {
+  return !!users.find(user => user.name === name && user.id !== currentId);
+}
+
 function addComment(photo_id, user_id, comment, left, top) {
   const id = uuid();
 
@@ -202,6 +206,7 @@ function addComment(photo_id, user_id, comment, left, top) {
 
 module.exports = {
   addComment,
+  isUsernameTaken,
   getPhotos,
   getPhoto,
   getUser

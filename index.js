@@ -61,13 +61,25 @@ app.patch("/users/:id", (req, res) => {
 
   const { name } = req.body;
 
-  if (user) {
-    user.name = name;
-
-    return res.json(user);
+  if (!user) {
+    return res.status(404).json({
+      error: {
+        form: "User not found"
+      }
+    });
   }
 
-  return res.status(404).json({});
+  if (store.isUsernameTaken(name, user.id)) {
+    return res.status(422).json({
+      error: {
+        name: "Username taken"
+      }
+    });
+  }
+
+  user.name = name;
+
+  return res.json(user);
 });
 
 app.listen(3001, () => console.log("Example app listening on port 3001!"));
